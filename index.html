@@ -22,7 +22,10 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
+        }
+        article{
             display: flex;
+
         }
 
         img {
@@ -62,7 +65,7 @@
                 o texto centralizado em letras [cor das letras]: '[Escreva exatamente o texto da imagem]'. 
                 No topo, há um ícone de [descrever o ícone].">
         <div>
-            <h2>Meu primeiro post</h2>
+            <h2>Meu segundo post</h2>
             <p class="artigo-autor">Por: Yohana Ferreira</p>
             <p>Boas-vindas ao meu novo blog! Aqui vou comoartilhar dicas de programação
                 e curiosidades da área de tecnologia.</p>
@@ -77,11 +80,18 @@
     const botoes = document.querySelectorAll("button");
 
     botoes.forEach(function (botao) {
+         let curtiu = false;
         botao.adEventListener("click,botaoClicado");
         function botaoClicado() {
             console.log("fui clicado");
             let texto = botao.querySelector("span");
-            texto.textContent++;
+            if(curtiu === false){
+           texto.textContent++;
+           curtiu = true;
+            }else{
+                texto.textCont--;
+                curtiu = false;
+            }
         }
 
     })
